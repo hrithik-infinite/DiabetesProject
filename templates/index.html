@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Prediction</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        background-color: #d5f4e6;
+      }
+
+      header {
+        font-family: "Carter One", cursive;
+        text-align: center;
+        margin: 3vh;
+      }
+
+      #f1 {
+        /* align-items: center; */
+        text-align: center;
+        font-size: 3.2vh;
+      }
+
+      #button {
+        margin: 3vh;
+        height: 7vh;
+        width: 12vh;
+        background-color: #618685;
+        color: white;
+      }
+
+      .c1 {
+        /* font-size: vh; */
+        background-color: #80ced6;
+        font-weight: bold;
+        /* font-size: 20vh; */
+        color: black;
+        margin: 1vh;
+        height: 4vh;
+        width: 50vh;
+        border: black solid 0.4vh;
+
+        /* color: brown; */
+      }
+      ::placeholder {
+        font-size: 2.5vh;
+        color: #fefbd8;
+      }
+      .c2 {
+        font-size: 3.5vh;
+        font-family: "Roboto Condensed", sans-serif;
+      }
+      .c3 {
+        font-size: 4vh;
+        font-weight: bold;
+        font-family: "Roboto Condensed", sans-serif;
+      }
+      footer {
+        margin-top: 2.5vh;
+        font-size: 2.75vh;
+        font-family: "Roboto Condensed", sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Diabetes Prediction using various Parameters</h1>
+    </header>
+    <div id="f1">
+      <form action="{{ url_for ('diab')}}" method="POST">
+        <label for="age" class="c2">Enter your Age</label>
+        <input
+          type="text"
+          class="c1"
+          id="age"
+          name="age"
+          required="required"
+          placeholder="in years"
+        /><br />
+
+        <label for="glucose" class="c2">Enter your glucose levels</label>
+        <input
+          type="text"
+          class="c1"
+          id="glucose"
+          name="glucose"
+          required="required"
+          placeholder="in mmol/L"
+        /><br />
+
+        <label for="bp" class="c2">Enter your Blood Pressure</label>
+        <input
+          type="text"
+          class="c1"
+          id="bp"
+          name="bp"
+          required="required"
+          placeholder="diastolic value"
+        /><br />
+
+        <label for="skin" class="c2">Enter your skin thickness</label>
+        <input
+          type="text"
+          class="c1"
+          id="skin"
+          name="skin"
+          required="required"
+          placeholder="in mm"
+        /><br />
+
+        <label for="insulin" class="c2">Enter your insulin levels</label>
+        <input
+          type="text"
+          class="c1"
+          id="insulin"
+          name="insulin"
+          required="required"
+          placeholder="in mIU/L"
+        /><br />
+
+        <label for="preg" class="c2">Enter number of pregnencies </label>
+        <input
+          type="text"
+          class="c1"
+          id="preg"
+          name="preg"
+          required="required"
+          placeholder="number"
+        /><br />
+
+        <label for="bmi" class="c2">Enter your BMI</label>
+        <input
+          type="text"
+          class="c1"
+          id="bmi"
+          name="bmi"
+          required="required"
+          placeholder="kg/m.m"
+        /><br />
+
+        <label for="pedigree" class="c2"
+          >Enter your Diabetes pedigree function</label
+        >
+        <input
+          type="text"
+          id="glucose"
+          class="c1"
+          name="pedigree"
+          required="pedigree"
+          placeholder="family diabetes history factor"
+        /><br />
+
+        <input id="button" type="submit" value="Submit" />
+        <br />
+        <div id="sub" class="c3">{{ ans }}</div>
+      </form>
+    </div>
+    <footer>
+      <p>Made by Hrithik</p>
+      <a href="http://www.linkedin.com/in/hrithik-agarwal-b463531a1/"
+        >LinkedIn</a
+      >
+    </footer>
+  </body>
+</html>
